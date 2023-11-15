@@ -1,0 +1,58 @@
+package calcproject;
+
+import java.util.Scanner;
+
+public class calcclass {
+
+	public static void main(String[] args) {
+		
+		Scanner allinput = new Scanner(System.in);
+		String course;
+		int mins, hw1 ,hw2 ,hw3 ,hw4, overallgrade;
+		double quiz1, quiz2, quiz3, quiz4, averagequiz, finalexamgrade;
+		double averagehwgrade;
+		
+		System.out.print("Please enter a course: ");
+		course = allinput .nextLine();
+		
+		System.out.println("Enter average amount of time spent on the course per week in minutes:");
+		mins = allinput.nextInt();
+		int hours = mins/60;
+		int totalmins = mins % 60;
+		
+		System.out.println("Enter the four HW grades (put a space after each HW grade)");
+		hw1 = allinput.nextInt();
+		hw2 = allinput.nextInt();
+		hw3 = allinput.nextInt();
+		hw4 = allinput.nextInt();
+		System.out.println("HW 1 " + hw1 + " HW 2 " + hw2 + " HW3 " + hw3 + " HW4 " + hw4);
+		
+		System.out.println("Enter the four Quiz grades (put a space after each quiz grade)");
+		quiz1 = allinput.nextDouble();
+		quiz2 = allinput.nextDouble();
+		quiz3 = allinput.nextDouble();
+		quiz4 = allinput.nextDouble();
+		
+		averagehwgrade = (double) (hw1 + hw2 + hw3 +hw4)/4;
+		averagequiz = (int) (quiz1 + quiz2 + quiz3 + quiz4)/4;
+		
+		averagequiz += 00.5;
+		averagequiz = (int)(averagequiz * 100);
+		averagequiz = (averagequiz/100);
+		
+		System.out.println("Please enter final exam score:");
+		finalexamgrade = allinput.nextDouble();
+
+		weighthomework
+		
+//		System.out.println("Course name: " + course);
+//		System.out.println("Average time spent in course:" + hours + " hours" + totalmins + " minutes");
+//		System.out.println("Your average class grade for homework is: " + averagehwgrade);
+//		System.out.println("Your average class grade for quizes is: " + averagequiz);
+//		System.out.println("Your final exam grade for this class:" + finalexamgrade);
+//		System.out.println("Overallgrade for this class:" + (int)overallgrade);
+	
+
+		
+	}
+}
