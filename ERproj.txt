@@ -8,17 +8,16 @@ public class calcclass {
 		
 		Scanner allinput = new Scanner(System.in);
 		String course;
-		int mins, hw1 ,hw2 ,hw3 ,hw4, overallgrade;
-		double quiz1, quiz2, quiz3, quiz4, averagequiz, finalexamgrade;
-		double averagehwgrade;
+		int mins, hw1 ,hw2 ,hw3 ,hw4, hours, totalmins;
+		double quiz1, quiz2, quiz3, quiz4, averagequiz, finalexamgrade,averagehwgrade,weighthomework, weightquiz, overallgrade;
 		
 		System.out.print("Please enter a course: ");
 		course = allinput .nextLine();
 		
 		System.out.println("Enter average amount of time spent on the course per week in minutes:");
 		mins = allinput.nextInt();
-		int hours = mins/60;
-		int totalmins = mins % 60;
+		hours = mins/60;
+		totalmins = mins % 60;
 		
 		System.out.println("Enter the four HW grades (put a space after each HW grade)");
 		hw1 = allinput.nextInt();
@@ -36,23 +35,28 @@ public class calcclass {
 		averagehwgrade = (double) (hw1 + hw2 + hw3 +hw4)/4;
 		averagequiz = (int) (quiz1 + quiz2 + quiz3 + quiz4)/4;
 		
-		averagequiz += 00.5;
+		averagequiz += 0.005;
 		averagequiz = (int)(averagequiz * 100);
 		averagequiz = (averagequiz/100);
 		
 		System.out.println("Please enter final exam score:");
 		finalexamgrade = allinput.nextDouble();
 
-		weighthomework
+		weighthomework = averagehwgrade * 0.35;
+		weightquiz = averagequiz * 0.15;
+		double finalgrade = finalexamgrade * 0.50;
 		
-//		System.out.println("Course name: " + course);
-//		System.out.println("Average time spent in course:" + hours + " hours" + totalmins + " minutes");
-//		System.out.println("Your average class grade for homework is: " + averagehwgrade);
-//		System.out.println("Your average class grade for quizes is: " + averagequiz);
-//		System.out.println("Your final exam grade for this class:" + finalexamgrade);
-//		System.out.println("Overallgrade for this class:" + (int)overallgrade);
-	
-
+		overallgrade = (weighthomework+ weightquiz + finalgrade);
+		overallgrade += 0.5;
+		overallgrade = (int)overallgrade * 10;
+		overallgrade /= 10;
 		
+		System.out.println("Course name: " + course);
+		System.out.println("Average time spent in course:" + hours + " hours" + totalmins + " minutes");
+		System.out.println("Your average class grade for homework is: " + averagehwgrade + "%");
+		System.out.println("Your average class grade for quizes is: " + averagequiz + "%");
+    	System.out.println("Your final exam grade for this class:" + finalexamgrade + "%");
+		System.out.println("Overallgrade for this class:" + (int)overallgrade + "%");
+			
 	}
 }
